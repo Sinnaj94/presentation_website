@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+body {
+  font-family: "Roboto", sans-serif; }
+
+body {
+  background: url("../img/sample.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.menu {
+  width: 100%;
+  display: block;
+  position: relative;
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  transition: all .5s;
+  font-size: 20px;
+  font-family: Helvetica Neue; }
+  .menu-switch {
+    background: transparent;
+    text-align: center;
+    bottom: 0;
+    position: absolute;
+    width: 30px;
+    margin-right: 0;
+    font-size: 30px;
+    cursor: pointer; }
+    .menu-switch-previous {
+      left: 0; }
+      .menu-switch-previous:hover {
+        padding-left: 35px; }
+    .menu-switch-next {
+      right: 0; }
+      .menu-switch-next:hover {
+        padding-right: 35px; }
+    .menu-switch:hover {
+      background: rgba(0, 0, 0, 0.5); }
+  .menu a {
+    color: white;
+    text-decoration-style: none; }
+  .menu-basic {
+    background: transparent; }
+    .menu-basic:hover {
+      padding-left: 40px;
+      background: rgba(0, 0, 0, 0.5); }
+      .menu-basic:hover .menu-content {
+        visibility: visible;
+        opacity: 1;
+        margin-top: 0; }
+  .menu-expanded {
+    background: rgba(0, 0, 0, 0.5);
+    padding-left: 40px;
+    padding-bottom: 58px; }
+    .menu-expanded .menu-content {
+      visibility: visible;
+      opacity: 1;
+      margin-top: 0; }
+  .menu-content {
+    transition: all .5s;
+    opacity: 0;
+    padding-left: -20px;
+    visibility: hidden; }
+    .menu-content-more {
+      position: relative;
+      transition: all .5s;
+      visibility: hidden;
+      top: -28px;
+      opacity: 0;
+      height: 0; }
+      .menu-content-more-visible {
+        top: 0px;
+        visibility: visible;
+        opacity: 1;
+        height: auto; }
+
+.selected {
+  background-color: blue; }

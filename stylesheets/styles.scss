@@ -1,0 +1,125 @@
+$main-color: white;
+$link-color: white;
+$link-hover-color: pink;
+$background-color: #777;
+$negative-background-color: #777;
+$standard-box-shadow-color: black;
+$standard-box-shadow: 0px 0px 10px 0px $standard-box-shadow-color;
+$background-color-expanded: rgba(0,0,0,.5);
+$background-color-basic: rgba(0,0,0,0);
+$small: 6px;
+$middle: 10px;
+$big: 20px;
+
+$font-s: 10px;
+$font-m: 12px;
+$font-l: 20px;
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+$big-font: 'Roboto', sans-serif;
+
+
+$description-font: red;
+
+body {
+	font-family:$big-font;
+}
+
+body {
+	background: url('../img/sample.jpg') no-repeat center center fixed; 
+		  -webkit-background-size: cover;
+		  -moz-background-size: cover;
+		  -o-background-size: cover;
+		  background-size: cover;
+}
+
+.menu {
+	width: 100%;
+    display: block;
+    position: relative;
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    transition: all .5s;
+    font-size: 20px;
+    font-family: Helvetica Neue;
+    &-switch {
+   		background: $background-color-basic;
+    	text-align: center;
+    	bottom: 0;
+    	position: absolute;
+    	width: 30px;
+    	margin-right: 0;
+    	font-size: 30px;
+    	cursor: pointer;
+    	&-previous {
+    		left: 0;
+    		&:hover {
+    			padding-left: 35px;
+    		}
+    	}
+    	&-next {
+    		right: 0;
+    		&:hover {
+    			padding-right: 35px;
+    		}
+    	}
+    	&:hover {
+    		background: $background-color-expanded;
+    	}
+    }
+    a {
+    	color: white;
+    	text-decoration-style: none;
+    }
+    &-basic {
+   		background: $background-color-basic;
+    	&:hover {
+	    	.menu-content {
+				visibility: visible;
+	    		opacity: 1;
+	    		margin-top: 0;	
+	    	}
+	    	padding-left: 40px;
+    		background: $background-color-expanded;
+		}
+    }
+    &-expanded {
+    	background: $background-color-expanded;
+    	padding-left: 40px;
+    	padding-bottom: 58px;
+		.menu-content {
+			visibility: visible;
+    		opacity: 1;
+    		margin-top: 0;	
+    	}
+    }
+    &-content {
+    	transition: all .5s;
+    	opacity: 0;
+    	padding-left: -20px;
+    	visibility: hidden;
+    	&-more {
+    		position: relative;
+    		transition: all .5s;
+    		visibility: hidden;
+    		top: -28px;
+    		opacity: 0;
+    		height: 0;
+    		&-visible {
+    			top: 0px;
+    			visibility: visible;
+    			opacity: 1;
+    			height: auto;
+    		}
+    	}
+    }
+}
+
+.selected {
+    background-color: blue;
+}
+
+
