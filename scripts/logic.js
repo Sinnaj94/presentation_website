@@ -1,14 +1,20 @@
 $(document).ready(function() {
 	$('.menu-basic').on('click', function(self) {
 		expand(self.target);
-	})
+	});
+	$(document.body).on('click', function(self){
+		if(!$(self.target).hasClass('menu-basic') && !$(self.target).hasClass('menu-expanded')) {
+			console.log(self.target);
+			smallization($('.menu-expanded'));
+		}
+	});
 	//getRandomWord();
 });
 
 function expand(target) {
 	const jqueryObject = $(target);
 	if(jqueryObject.hasClass('menu-expanded')){
-		smallization(jqueryObject);
+		expansion(jqueryObject);
 	}else if(jqueryObject.hasClass('menu-basic')){
 		expansion(jqueryObject);
 		const others = $('.menu-expanded').not(jqueryObject);
@@ -41,7 +47,9 @@ function expansion(target) {
 	target.removeClass('menu-basic');
 	const ins = $(target).find('.insertion')
 	ins.addClass('insertion-active');
-	insertRandom(ins.data('key'),ins);
+	if(ins.data('key')) {
+		insertRandom(ins.data('key'),ins);
+	}
 
 }
 

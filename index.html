@@ -12,16 +12,27 @@
 	<script src="./bower_components/bootstrap/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="./stylesheets/styles.css">
 	<script type="text/javascript" src="./scripts/logic.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 <body>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<!-- easy menu content -->
-	<div class="menu menu-basic"><span class="sentence">i am </span><span class="menu-content insertion" data-key="iam"> jannis jahr and i live in bremen.</div>
-	<div class="menu menu-basic"><span class="sentence">i like </span><span class="menu-content insertion" data-key="ilike"> good and plain design.</span></div>
-	<div class="menu menu-basic">i do <span class="menu-content insertion" data-key="ido"> a lot of frontend and other tasks.</span></div>
+	<div class="menu-container">
+		<div class="logo">jannis jahr<span class="logo-underline"></span></div>
+		<div class="menu menu-basic"><span class="sentence">i am </span><span class="menu-content insertion" data-key="iam"> jannis jahr and i live in bremen.</div>
+		<div class="menu menu-basic"><span class="sentence">i like </span><span class="menu-content insertion" data-key="ilike"> good and plain design.</span></div>
+		<div class="menu menu-basic">
+		i create <span class="menu-content insertion" data-key="icreate"> websites and stuff</span>
+		<div class="menu-more">
+			<img src="icons/github.svg" class="svg-standard" alt="GitHub">
+			<img src="icons/soundcloud.svg" class="svg-standard" alt="Soundcloud">
+			<img src="icons/flickr.svg" class="svg-standard" alt="Flickr">
+		</div>
+		</div>
 
-	<div class="menu menu-basic">contact <span class="menu-content">me at <a href="mailto:jannis.jahr@hotmail.de">jannis.jahr@hotmail.de</a>.</span></div>
-	<div class="menu menu-switch menu-switch-previous"><</div>
-	<div class="menu menu-switch menu-switch-next">></div>
+		<div class="menu menu-basic">contact <span class="menu-content">me at <a href="mailto:jannis.jahr@hotmail.de">jannis.jahr@hotmail.de</a>.</span></div>
+	</div>
+
 
 </body>

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
 body {
   font-family: "Roboto", sans-serif; }
 
@@ -13,61 +14,57 @@ body {
   width: 100%;
   display: block;
   position: relative;
-  color: white;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-left: 30px;
-  padding-right: 30px;
-  transition: all .5s;
-  font-size: 20px;
-  font-family: Helvetica Neue; }
-  .menu-switch {
-    background: transparent;
-    text-align: center;
-    bottom: 0;
+  color: black;
+  transition: padding .4s, opacity .4s;
+  padding-left: 20px;
+  font-size: 26px;
+  font-family: "Roboto", sans-serif; }
+  .menu-more {
+    visibility: hidden;
+    height: 0px;
+    opacity: 0;
+    transition: opacity 1s; }
+  .menu-background {
     position: absolute;
-    width: 30px;
-    margin-right: 0;
-    font-size: 30px;
-    cursor: pointer; }
-    .menu-switch-previous {
-      left: 0; }
-      .menu-switch-previous:hover {
-        padding-left: 35px; }
-    .menu-switch-next {
-      right: 0; }
-      .menu-switch-next:hover {
-        padding-right: 35px; }
-    .menu-switch:hover {
-      background: rgba(0, 0, 0, 0.5); }
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    transition: all 1s; }
+  .menu-container {
+    position: absolute;
+    width: 50%;
+    right: 0;
+    top: 20%; }
   .menu a {
-    color: white;
+    color: black;
     text-decoration-style: none; }
   .menu-basic {
-    background: transparent; }
+    background: rgba(255, 255, 255, 0); }
     .menu-basic:hover {
-      padding-left: 40px;
-      background: rgba(0, 0, 0, 0.5); }
+      background: rgba(255, 255, 255, 0.5); }
       .menu-basic:hover .menu-content {
+        margin-left: 0;
         visibility: visible;
-        opacity: 1;
-        margin-top: 0; }
+        opacity: 1; }
   .menu-expanded {
-    background: rgba(0, 0, 0, 0.5);
-    padding-left: 40px;
-    padding-bottom: 58px; }
+    background: rgba(255, 255, 255, 0.7);
+    padding-left: 25px; }
     .menu-expanded .menu-content {
+      margin-left: 0;
+      visibility: visible;
+      opacity: 1; }
+    .menu-expanded .menu-more {
       visibility: visible;
       opacity: 1;
-      margin-top: 0; }
+      height: auto; }
   .menu-content {
-    transition: all .5s;
+    transition: margin .4s, opacity .4s;
     opacity: 0;
-    padding-left: -20px;
+    margin-left: 5px;
     visibility: hidden; }
     .menu-content-more {
       position: relative;
-      transition: all .5s;
+      transition: padding .4s, opacity .4s;
       visibility: hidden;
       top: -28px;
       opacity: 0;
@@ -78,5 +75,24 @@ body {
         opacity: 1;
         height: auto; }
 
+.logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 40px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  cursor: default;
+  user-select: none;
+  transition: color .3s;
+  display: inline-block; }
+  .logo:hover {
+    color: green; }
+
 .selected {
   background-color: blue; }
+
+.svg-standard {
+  height: 100px;
+  margin: 10px;
+  transition: transform .3s; }
+  .svg-standard:hover {
+    transform: translateY(-4px); }

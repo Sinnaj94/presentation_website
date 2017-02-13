@@ -1,20 +1,24 @@
-$main-color: white;
-$link-color: white;
+$main-color: black;
+$link-color: black;
 $link-hover-color: pink;
 $background-color: #777;
 $negative-background-color: #777;
 $standard-box-shadow-color: black;
 $standard-box-shadow: 0px 0px 10px 0px $standard-box-shadow-color;
-$background-color-expanded: rgba(0,0,0,.5);
-$background-color-basic: rgba(0,0,0,0);
+$background-color-expanded: rgba(255,255,255,.5);
+$background-color-expanded-more: rgba(255,255,255,.7);
+
+$background-color-basic: rgba(255,255,255,0);
 $small: 6px;
 $middle: 10px;
 $big: 20px;
+
 
 $font-s: 10px;
 $font-m: 12px;
 $font-l: 20px;
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
 
 $big-font: 'Roboto', sans-serif;
 
@@ -37,73 +41,70 @@ body {
 	width: 100%;
     display: block;
     position: relative;
-    color: white;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: 30px;
-    padding-right: 30px;
-    transition: all .5s;
-    font-size: 20px;
-    font-family: Helvetica Neue;
-    &-switch {
-   		background: $background-color-basic;
-    	text-align: center;
-    	bottom: 0;
-    	position: absolute;
-    	width: 30px;
-    	margin-right: 0;
-    	font-size: 30px;
-    	cursor: pointer;
-    	&-previous {
-    		left: 0;
-    		&:hover {
-    			padding-left: 35px;
-    		}
-    	}
-    	&-next {
-    		right: 0;
-    		&:hover {
-    			padding-right: 35px;
-    		}
-    	}
-    	&:hover {
-    		background: $background-color-expanded;
-    	}
+    color: $main-color;
+    transition: padding .4s, opacity .4s;
+    padding-left: 20px;
+    font-size: 26px;
+    font-family: $big-font;
+    &-more {
+        visibility: hidden;
+        height: 0px;
+        opacity: 0;
+        transition: opacity 1s;
+    }
+    &-background { 
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0);
+        transition: all 1s;
+    }
+    &-container {
+        position:absolute;
+        width: 50%;
+        right: 0;
+        top: 20%;
     }
     a {
-    	color: white;
+    	color: $link-color;
     	text-decoration-style: none;
     }
     &-basic {
    		background: $background-color-basic;
     	&:hover {
 	    	.menu-content {
+                margin-left: 0;
 				visibility: visible;
 	    		opacity: 1;
-	    		margin-top: 0;	
 	    	}
-	    	padding-left: 40px;
+	    	//padding-left: 40px;
     		background: $background-color-expanded;
 		}
     }
     &-expanded {
-    	background: $background-color-expanded;
-    	padding-left: 40px;
-    	padding-bottom: 58px;
+    	background: $background-color-expanded-more;
+    	padding-left: 25px;
 		.menu-content {
+            margin-left: 0;
 			visibility: visible;
     		opacity: 1;
-    		margin-top: 0;	
     	}
+        .menu-more {
+            visibility: visible;
+            opacity: 1;
+            height: auto;
+        }
     }
     &-content {
-    	transition: all .5s;
+        transition: margin .4s, opacity .4s;
+    	
     	opacity: 0;
-    	padding-left: -20px;
+    	margin-left: 5px;
     	visibility: hidden;
     	&-more {
     		position: relative;
-    		transition: all .5s;
+            transition: padding .4s, opacity .4s;
+    		
     		visibility: hidden;
     		top: -28px;
     		opacity: 0;
@@ -118,8 +119,33 @@ body {
     }
 }
 
+.logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    cursor: default;
+    user-select: none;
+    transition: color .3s;
+    display: inline-block;
+    &:hover {
+        color: green;
+    }
+}
+
 .selected {
     background-color: blue;
 }
+
+.svg-standard {
+    height: 100px;
+    margin: 10px;
+    transition: transform .3s;
+    &:hover {
+        transform:translateY(-4px);
+    }
+}
+
+
 
 
