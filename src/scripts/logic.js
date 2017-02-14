@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('.menu-basic').on('click', function(event) {
+	$('.menu-basic').on('click tap', function(event) {
 		event.stopPropagation();
 		expand(event.target);
 	});

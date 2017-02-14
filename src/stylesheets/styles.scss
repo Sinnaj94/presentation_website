@@ -47,7 +47,12 @@ body {
     color: $main-color;
     transition: padding .4s, opacity .4s;
     padding-left: 20px;
-    font-size: 26px;
+    @media screen and (min-width: $tablet-min) {
+        font-size: 20px;
+        
+    }
+    font-size: 16px;
+
     font-family: $big-font;
     cursor: pointer;
     &-more {
