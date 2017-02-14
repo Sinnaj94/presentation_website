@@ -1,9 +1,10 @@
 $(document).ready(function() {
-	$('.menu-basic').on('click', function(self) {
-		expand(self.target);
+	$('.menu-basic').on('click', function(event) {
+		event.stopPropagation();
+		expand(event.target);
 	});
 	$(document.body).on('click', function(self){
-		if(!$(self.target).hasClass('menu-basic') && !$(self.target).hasClass('menu-expanded')) {
+		if(!$(self.target).hasClass('menu')) {
 			console.log(self.target);
 			smallization($('.menu-expanded'));
 		}
@@ -23,11 +24,14 @@ function expand(target) {
 }
 
 function insertRandom(key,target) {
-	$.getJSON('./sources/sentences.json', function(data) {
-		var string = data[key].randomElement() + '.';
-		target.html("");
-		showText(target, string, 0, 50);
-	})
+	if(!target.attr('data-running')){
+		$.getJSON('./sources/sentences.json', function(data) {
+			var string = data[key].randomElement() + '.';
+			target.html("");
+			showText(target, string, 0, 50);
+			target.attr('data-running',true);
+		});
+	}
 }
 
 Array.prototype.randomElement = function () {
@@ -53,10 +57,13 @@ function expansion(target) {
 
 }
 
-var showText = function (target, message, index, interval) { 
+var running = false;
+var showText = function (target, message, index, interval) {
   	if (index < message.length) {
     	target.append(message[index++]);
     	setTimeout(function () { showText(target, message, index, interval); }, interval);
+  	} else {
+  		console.log("remove data");
+  		target.removeAttr('data-running');
   	}
-
 }

@@ -8,6 +8,9 @@ $standard-box-shadow: 0px 0px 10px 0px $standard-box-shadow-color;
 $background-color-expanded: rgba(255,255,255,.5);
 $background-color-expanded-more: rgba(255,255,255,.7);
 
+$phone-min: 480px;
+$tablet-min: 660px;
+$desktop-min: 950px;
 $background-color-basic: rgba(255,255,255,0);
 $small: 6px;
 $middle: 10px;
@@ -46,11 +49,14 @@ body {
     padding-left: 20px;
     font-size: 26px;
     font-family: $big-font;
+    cursor: pointer;
     &-more {
+        color: slategray;
+        
         visibility: hidden;
-        height: 0px;
+        max-height: 0px;
         opacity: 0;
-        transition: opacity 1s;
+        transition: opacity 1s, transform 1s;
     }
     &-background { 
         position: absolute;
@@ -61,15 +67,26 @@ body {
     }
     &-container {
         position:absolute;
-        width: 50%;
+        width: 100%;
+        top: 0;
+        @media screen and (min-width: $tablet-min) {
+           width: 50%;
+           top: 20%;
+        }
         right: 0;
-        top: 20%;
+        
     }
     a {
     	color: $link-color;
     	text-decoration-style: none;
     }
     &-basic {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        @media screen and (min-width: $tablet-min) {
+           padding-top: 0;
+           padding-bottom: 0;
+        }
    		background: $background-color-basic;
     	&:hover {
 	    	.menu-content {
@@ -82,6 +99,12 @@ body {
 		}
     }
     &-expanded {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        @media screen and (min-width: $tablet-min) {
+           padding-top: 0;
+           padding-bottom: 0;
+        }
     	background: $background-color-expanded-more;
     	padding-left: 25px;
 		.menu-content {
@@ -92,30 +115,15 @@ body {
         .menu-more {
             visibility: visible;
             opacity: 1;
-            height: auto;
+            max-height: 200px;
+            font-size: 20px;
         }
     }
     &-content {
         transition: margin .4s, opacity .4s;
-    	
     	opacity: 0;
     	margin-left: 5px;
     	visibility: hidden;
-    	&-more {
-    		position: relative;
-            transition: padding .4s, opacity .4s;
-    		
-    		visibility: hidden;
-    		top: -28px;
-    		opacity: 0;
-    		height: 0;
-    		&-visible {
-    			top: 0px;
-    			visibility: visible;
-    			opacity: 1;
-    			height: auto;
-    		}
-    	}
     }
 }
 
@@ -138,11 +146,27 @@ body {
 }
 
 .svg-standard {
-    height: 100px;
+    height: 50px;
     margin: 10px;
-    transition: transform .3s;
+    transition: transform .1s;
     &:hover {
-        transform:translateY(-4px);
+        transform:translateY(-2px);
+    }
+}
+
+ul {
+    padding-left: 0;
+    &>li {
+        @media screen and (min-width: $tablet-min) {
+            border-bottom: none;
+        }
+        &:first-of-type{
+            @media screen and (min-width: $tablet-min) {
+                border-top: none;
+            }
+            border-top: 1px solid grey;
+        }
+        border-bottom: 1px solid grey;
     }
 }
 
