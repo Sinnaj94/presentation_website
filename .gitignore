@@ -91,6 +91,6 @@ jspm_packages
 
 # important : no key
 .ftppass
-
+dist/
 
 # End of https://www.gitignore.io/api/node,bower,macos
