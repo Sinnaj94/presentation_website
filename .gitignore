@@ -89,5 +89,8 @@ jspm_packages
 # dotenv environment variables file
 .env
 
+# important : no key
+.ftppass
+
 
 # End of https://www.gitignore.io/api/node,bower,macos

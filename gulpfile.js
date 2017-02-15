@@ -16,7 +16,7 @@ gulp.task('deploy', function() {
 	return gulp.src('./src/**')
 	        .pipe(sftp({
 	            host: 'home669624775.1and1-data.host',
-	            user: 'u88314581',
-	            remotePath: './htdocs'
+	            remotePath: './htdocs',
+				auth: 'keyShort'
 	        }));
 })
